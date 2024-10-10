@@ -1,0 +1,26 @@
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.fullPoint {
+  display: flex;
+}
+
+.firstPart {
+  display: flex;
+}
+
+.fullSummary {
+  display: flex;
+  align-items: center;
+  font-family: serif;
+}
+
+.timeBox,
+.dateBox {
+  display: flex;
+  gap: 0.1rem;
+}

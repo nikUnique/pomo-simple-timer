@@ -1,0 +1,96 @@
+.appHeader {
+  background-color: #40adbd;
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.appHeader h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #e7f5f7;
+}
+
+.headerIcon {
+  max-width: 4rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.appTitle {
+  display: flex;
+}
+
+.appNav {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.toggleStatsButton,
+.settingsButton,
+.shortcutsButton {
+  border: none;
+  color: #e7f5f7;
+  font-size: 1.8rem;
+  cursor: pointer;
+  /* transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; */
+}
+
+.settings button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2.4rem;
+}
+
+.navItemsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 auto;
+}
+
+.mainTitle {
+  padding-right: 1.2rem;
+}
+/* 
+.mainTitleExtension {
+  color: #e7f5f7;
+  align-self: center;
+}
+
+.timerIcon {
+  max-width: 3rem;
+  height: 3rem;
+  align-self: center;
+}
+
+.simpleTimer {
+  display: flex;
+} */
+/* .themeSelector {
+  font-size: 2rem;
+  padding: 1.6rem;
+}
+
+.themeSelector label {
+  margin-right: 0.4rem;
+}
+
+.themeSelector select {
+  padding: 0.4rem;
+  font-size: 2rem;
+  border-radius: 9px;
+  border: 1px solid #e7f5f7;
+  color: #e7f5f7;
+} */

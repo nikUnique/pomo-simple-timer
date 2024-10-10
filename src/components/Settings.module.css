@@ -1,0 +1,387 @@
+.settingsMenu {
+  text-align: left;
+  background-color: #fff;
+  padding: 2.4rem;
+  padding-top: 0;
+  border-radius: 11px;
+  z-index: 1000;
+  max-height: 51rem;
+  width: 44rem;
+}
+
+.settingsContainer {
+  font-size: 1.4rem;
+  padding: 0.8rem;
+}
+
+.settingsTitle {
+  position: absolute;
+  top: 1.6rem;
+  left: 3.2rem;
+  padding: 0;
+  font-size: 3rem;
+  color: #1098ad;
+  line-height: 1;
+}
+
+.bottomBorder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  height: 2.4rem;
+  width: 100%;
+  padding-bottom: 2.4rem;
+  border-radius: 11px;
+}
+
+.soundSelect {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  transition: all 0.3s ease;
+  margin-bottom: 1.2rem;
+}
+
+.soundSelect:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.soundSelect:focus {
+  border-color: #1098ad;
+}
+
+.volumeControl {
+  margin-top: 1.6rem;
+}
+
+.label {
+  display: inline-block;
+  align-self: center;
+  border-top: 1px solid #ccc;
+  padding-top: 1.6rem;
+  width: 100%;
+  color: #1098ad;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.settingsBorder {
+  width: 100%;
+  background-color: #ccc;
+  height: 1px;
+}
+
+.topLabel {
+  padding-top: 1.2rem;
+  margin-top: -0.4rem;
+}
+
+.label.noTopBorder {
+  border-top: none;
+}
+
+.mb4 {
+  margin-bottom: 0.4rem;
+}
+
+.mb8 {
+  margin-bottom: 0.8rem;
+}
+
+.mb12 {
+  margin-bottom: 1.2rem;
+}
+
+.volumeBox {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+input[type="range"] {
+  appearance: none;
+
+  width: 100%;
+  height: 8px;
+  align-self: center;
+  background-color: #1098ad;
+  border-radius: 9px;
+  opacity: 0.7;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #1098ad;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.muteButton {
+  align-self: center;
+  color: #1098ad;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  color: #1098ad;
+  position: absolute;
+  font-size: 1.8rem;
+
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
+.enableSoundBox {
+  display: flex;
+  margin-bottom: 1.6rem;
+}
+
+.customCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.3s;
+  border: 1px solid #ccc;
+}
+
+.checkmark:focus {
+  border: 1px solid #1098ad;
+}
+
+.checkboxInput:checked + .checkmark {
+  background-color: #1098ad;
+}
+
+.checkboxInput:checked + .checkmark:hover {
+  background-color: #0e899c;
+}
+
+/* Focus state styling for checkmark */
+.checkboxInput:focus-visible + .checkmark {
+  border-color: #1098ad;
+  box-shadow: 0 0 0 0.4rem rgba(16, 152, 173, 0.5); /* Optional: Add a focus ring or glow */
+}
+
+.checkmark::after {
+  content: "";
+  display: none;
+
+  width: 0.5rem;
+  height: 1rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 0.3rem;
+}
+
+.checkboxInput:checked + .checkmark::after {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 11px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.chooseTimerMode {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.radioBox {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.radioButton {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+input[type="radio"]:disabled + .radioButton {
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+input[type="radio"]:checked + .radioButton {
+  background-color: #fff;
+  border-color: #1098ad;
+}
+
+input[type="radio"]:checked:disabled + .radioButton {
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+input[type="radio"]:checked:disabled + .radioButton span {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.radioButton span {
+  padding: 0.52rem;
+  border-radius: 50%;
+  background-color: #1098ad;
+  border: 3px solid #fff;
+
+  opacity: 0;
+  transition: opacity 0.2s;
+  aspect-ratio: 1;
+}
+
+input[type="radio"]:checked + .radioButton span {
+  opacity: 1; /* Show when checked */
+}
+
+/* Inputs section */
+.inputs {
+  margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formGroup {
+  display: flex;
+
+  gap: 0.8rem;
+  flex-direction: column;
+}
+
+.seriaLabel {
+  white-space: nowrap;
+}
+
+.inputs input {
+  max-width: 8rem;
+  width: 10rem;
+  padding: 0.4rem 0;
+  font-size: 1.8rem;
+  border: 1px solid #1098ad;
+  border-radius: 9px;
+  color: #333;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.inputs input:disabled {
+  border: 2px solid #c7c7c7;
+  background-color: #ddd;
+  color: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.inputs input:focus-visible {
+  border-color: #0e899c;
+  box-shadow: none;
+}
+
+.inputs input::placeholder {
+  text-align: center;
+}
+
+.pomodoroNumber {
+  padding: 0.8rem;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.seriaSelection {
+  margin-bottom: 1.2rem;
+  white-space: nowrap;
+}
+
+.seriaSelection select {
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.seriaSelection select:focus {
+  border: 1px solid #1098ad;
+}
+
+.seriaSelection select:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  color: #555;
+  opacity: 0.6;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.simpleBar {
+  min-height: 0rem;
+  max-height: 51rem;
+}
+
+:global(.simplebar-scrollbar::before) {
+  background: rgba(2, 15, 17, 0.7);
+  position: absolute;
+}

@@ -1,0 +1,83 @@
+.timeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Time display */
+.time {
+  font-size: 6.2rem;
+  color: #70c1ce;
+  text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  align-items: center;
+  font-family: "Russo One", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.time span {
+  display: flex;
+  letter-spacing: 2.2px;
+}
+
+.time .seconds {
+  width: 2ch;
+}
+
+.time .hoursSeparator,
+.time .minutesSeparator {
+  justify-content: center;
+}
+
+/* Alert messages */
+.alert {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1098ad;
+  top: -70%;
+  animation: shake 0.5s;
+  white-space: nowrap;
+}
+
+.resetButton {
+  position: absolute;
+  align-self: center;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  color: #1098ad;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.resetButton:hover {
+  transform: translate(-50%, 100%);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

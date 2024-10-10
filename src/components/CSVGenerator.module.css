@@ -1,0 +1,21 @@
+.exportBtn {
+  padding: 0.4rem 0 !important;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  color: #e7f5f7;
+  background-color: #1098ad;
+  border: 1px solid #1098ad;
+  border-radius: 11px;
+  height: 100%;
+}
+
+.exportBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem rgba(16, 152, 173, 0.5) !important;
+  border-radius: 9px;
+}
+
+.exportBtn:hover {
+  background-color: #0e899c;
+}

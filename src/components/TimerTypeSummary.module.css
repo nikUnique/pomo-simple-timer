@@ -1,0 +1,36 @@
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  border-radius: 9px;
+  transition: transform 0.2s ease-in-out;
+  background-color: #e7f5f7;
+  width: 100%;
+  gap: 0.2rem;
+}
+
+.summaryItem:hover {
+  /* transform: scale(1.05); */
+  background-color: #cfeaef;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.075);
+}
+
+.summaryLabel,
+.summaryPoint {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #1098ad;
+  gap: 0.4rem;
+}
+
+.summaryPoint {
+  font-weight: normal;
+  font-size: 1.6rem;
+}
+
+.summaryIcon {
+  color: #1098ad;
+  font-size: 1.8rem;
+}

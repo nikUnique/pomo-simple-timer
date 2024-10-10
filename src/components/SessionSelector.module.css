@@ -1,0 +1,123 @@
+.sessionSelectContainer {
+  color: #1098ad;
+}
+
+.sessionSelector {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.6rem;
+}
+
+.sessionBtn {
+  padding: 0.4rem 0.8rem;
+  width: 10rem;
+  color: #1098ad;
+  border: 1px solid #1098ad;
+  border-radius: 11px;
+}
+
+.sessionBtn:hover {
+  background-color: #cfeaef;
+}
+
+.sessionBtn:disabled:hover {
+  background-color: transparent;
+}
+
+.sessionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sessionBtnActive {
+  background-color: #1098ad;
+  color: #e7f5f7;
+}
+
+.sessionBtnActive:hover {
+  background-color: #0e899c;
+}
+
+.sessionBtnActive:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sessionBtnActive:disabled:hover {
+  background-color: #1098ad;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.currentCycleLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  gap: 1.2rem;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  white-space: nowrap;
+  color: #1098ad;
+}
+
+.currentSessionLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.nextSession {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  background-color: #1098ad;
+  border-radius: 9px;
+  color: #e7f5f7;
+}
+
+.nextSession:hover {
+  cursor: pointer;
+  background-color: #0e899c;
+}
+
+.restartSeries {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.restartSeries:hover {
+  color: #0e899c;
+  cursor: pointer;
+}
+
+.restartLabel {
+  color: #e7f5f7;
+}
+
+.restartSeries:hover .icon {
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e7f5f7;
+  gap: 0.2rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
