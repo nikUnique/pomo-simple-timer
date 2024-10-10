@@ -1,0 +1,62 @@
+.shortcutsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #1098ad;
+  padding: 3.2rem;
+  column-gap: 4.8rem;
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+.shortcutsBorder {
+  width: 100%;
+  background-color: #ccc;
+  height: 1px;
+}
+
+.shortcutsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.shortcutsTitle {
+  color: #1098ad;
+  font-size: 3rem;
+  position: absolute;
+  top: 1.6rem;
+  left: 3.2rem;
+  line-height: 1;
+}
+
+.shortcutsItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.4rem;
+  width: 30rem;
+}
+
+.shortcutsKey {
+  padding: 0.2rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  background-color: #e7f5f7;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.shortcutsName {
+  flex-basis: 14rem;
+  justify-content: flex-start;
+}
+
+.keyContainer {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+  flex: 1;
+}

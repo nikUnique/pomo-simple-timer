@@ -1,0 +1,64 @@
+/* Custom Confirm Dialog */
+.customConfirmDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.075);
+  padding: 1.2rem;
+  z-index: 1000;
+}
+
+.dialogContent {
+  text-align: center;
+}
+
+.dialogContent p {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.dialogButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.confirmButton,
+.cancelButton {
+  border: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.confirmButton {
+  background-color: #ff5a5f;
+}
+
+.confirmButton:focus,
+.cancelButton:focus {
+  box-shadow: 0 0 0 0.4rem rgba(16, 152, 173, 0.5);
+}
+
+.cancelButton {
+  background-color: #1098ad;
+}
+
+.confirmButton:hover {
+  background-color: #e65156;
+  transform: scale(1.1);
+}
+
+.cancelButton:hover {
+  background-color: #0e899c;
+  transform: scale(1.1);
+}
