@@ -183,10 +183,7 @@ function PomodoroList({
             No Pomodoros on the list yet. Start your first session to see your
             progress here!
           </p>
-          <img
-            src='../../public/clipboard-5.webp'
-            className={styles.clipboard}
-          />
+          <img src='./clipboard-5.webp' className={styles.clipboard} />
         </div>
       )}
     </>

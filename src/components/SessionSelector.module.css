@@ -10,10 +10,15 @@
 
 .sessionBtn {
   padding: 0.4rem 0.8rem;
-  width: 10rem;
+  /* width: 10rem; */
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
   color: #1098ad;
   border: 1px solid #1098ad;
   border-radius: 11px;
+  display: flex;
+  white-space: nowrap;
 }
 
 .sessionBtn:hover {

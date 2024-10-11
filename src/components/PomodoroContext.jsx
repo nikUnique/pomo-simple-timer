@@ -31,13 +31,13 @@ export const PomodoroProvider = ({ children }) => {
   // Notification context
   const [isMuted, setIsMuted] = useState(false);
   const [allowPauseSound, setAllowPauseSound] = useState(false);
-  const [alarmSound, setAlarmSound] = useState("/end-sound-2.mp3");
+  const [alarmSound, setAlarmSound] = useState("./end-sound-2.mp3");
   const [alarmIsStopped, setAlarmIsStopped] = useState(true);
   const [isAlarmPlaying, setIsAlarmPlaying] = useState(false);
   const shortSoundTimerRef = useRef(null);
   const currentAudioRef = useRef(null);
-  const startSoundRef = useRef(new Audio("/start-sound.mp3"));
-  const pauseSoundRef = useRef(new Audio("/pause-sound-2.mp3"));
+  const startSoundRef = useRef(new Audio("./start-sound.mp3"));
+  const pauseSoundRef = useRef(new Audio("./pause-sound-2.ogg"));
   const endSoundRef = useRef(new Audio(alarmSound));
   const volumeRef = useRef(0.1);
 

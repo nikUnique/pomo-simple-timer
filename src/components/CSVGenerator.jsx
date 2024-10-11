@@ -1,5 +1,6 @@
 import { useStatsData } from "./PomodoroContext";
 import styles from "./CSVGenerator.module.css";
+import { FaFileExport } from "react-icons/fa";
 function CSVGenerator() {
   const { pomodoroList } = useStatsData();
 
@@ -141,6 +142,7 @@ function CSVGenerator() {
 
   return (
     <button className={styles.exportBtn} onClick={handleExport}>
+      <FaFileExport />
       Export history
     </button>
   );
