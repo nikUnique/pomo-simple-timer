@@ -30,7 +30,7 @@ export const PomodoroProvider = ({ children }) => {
 
   // Notification context
   const [isMuted, setIsMuted] = useState(false);
-  const [allowPauseSound, setAllowPauseSound] = useState(true);
+  const [allowPauseSound, setAllowPauseSound] = useState(false);
   const [alarmSound, setAlarmSound] = useState("/end-sound-2.mp3");
   const [alarmIsStopped, setAlarmIsStopped] = useState(true);
   const [isAlarmPlaying, setIsAlarmPlaying] = useState(false);
