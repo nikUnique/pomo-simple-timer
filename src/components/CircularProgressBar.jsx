@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from "react";
 import styles from "./CircularProgressBar.module.css";
-import { useTimeData, useTimerData } from "./PomodoroContext";
+import { useTimeData, useTimerData } from "./PomodoroContext.jsx";
 
 let firstTime = true;
 function CircularProgressBar({ size, strokeWidth, children }) {

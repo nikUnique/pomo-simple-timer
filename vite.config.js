@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 import eslint from "vite-plugin-eslint";
 
 export default defineConfig({
-  base: `/The-PomoSimple-timer/`,
   plugins: [react(), eslint()],
+  base: "/pomo-simple-timer/",
 });

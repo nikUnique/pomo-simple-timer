@@ -1,10 +1,10 @@
 import { memo } from "react";
-import CircularProgressBar from "./CircularProgressBar";
-import CurrentCycleLabel from "./CurrentCycleLabel";
-import { useTimerData } from "./PomodoroContext";
-import SessionSelector from "./SessionSelector";
-import Time from "./Time";
-import TimerControl from "./TimerControl";
+import CircularProgressBar from "./CircularProgressBar.jsx";
+import CurrentCycleLabel from "./CurrentCycleLabel.jsx";
+import { useTimerData } from "./PomodoroContext.jsx";
+import SessionSelector from "./SessionSelector.jsx";
+import Time from "./Time.jsx";
+import TimerControl from "./TimerControl.jsx";
 import styles from "./TimerInterface.module.css";
 
 function TimerInterface() {

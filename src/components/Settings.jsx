@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
-import { useTimer } from "../hooks/useTimer";
-import { useNotificationData, useTimerData } from "./PomodoroContext";
+import { useTimer } from "../hooks/useTimer.js";
+import { useNotificationData, useTimerData } from "./PomodoroContext.jsx";
 import styles from "./Settings.module.css";
-import TimerModeSelection from "./TimerModeSelection";
+import TimerModeSelection from "./TimerModeSelection.jsx";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
-import { useKey } from "../hooks/useKey";
+import { useKey } from "../hooks/useKey.js";
 const alarmSounds = [
   { name: "Ring One", url: "/end-sound-2.mp3" },
   { name: "Ring Two", url: "/end-sound-3.mp3" },

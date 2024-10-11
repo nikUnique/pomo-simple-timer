@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import { useTime } from "../hooks/useTime";
-import { useSettingsData, useTimerData } from "./PomodoroContext";
+import { useTime } from "../hooks/useTime.js";
+import { useSettingsData, useTimerData } from "./PomodoroContext.jsx";
 import styles from "./TimeInputForm.module.css";
 
 function TimeInputForm() {

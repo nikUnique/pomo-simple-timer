@@ -1,13 +1,13 @@
-import { useTime } from "../hooks/useTime";
+import { useTime } from "../hooks/useTime.js";
 import {
   useNotificationData,
   useSettingsData,
   useTimerData,
-} from "./PomodoroContext";
+} from "./PomodoroContext.jsx";
 import styles from "./Settings.module.css";
-import TimeInputForm from "./TimeInputForm";
+import TimeInputForm from "./TimeInputForm.jsx";
 function TimerModeSelection() {
-  const { currentAudioRef, isAlarmPlaying } = useNotificationData();
+  const { isAlarmPlaying } = useNotificationData();
 
   const { timerMode, setTimerMode, setSelectedTime, setIsTimeUp, isActive } =
     useTimerData();

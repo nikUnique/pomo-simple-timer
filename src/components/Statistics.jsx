@@ -7,15 +7,15 @@ import {
   FaTrashAlt,
   FaUmbrellaBeach,
 } from "react-icons/fa";
-import { useKey } from "../hooks/useKey";
-import { usePomodoroManager } from "../hooks/usePomodoroManager";
-import { useStatistics } from "../hooks/useStatisctics";
-import CustomConfirmDialog from "./CustomConfirmDialog";
-import { useStatsData, useTimerData } from "./PomodoroContext";
-import PomodoroList from "./PomodoroList";
+import { useKey } from "../hooks/useKey.js";
+import { usePomodoroManager } from "../hooks/usePomodoroManager.js";
+import { useStatistics } from "../hooks/useStatisctics.js";
+import CustomConfirmDialog from "./CustomConfirmDialog.jsx";
+import { useStatsData, useTimerData } from "./PomodoroContext.jsx";
+import PomodoroList from "./PomodoroList.jsx";
 import styles from "./Statistics.module.css";
-import TimerTypeSummary from "./TimerTypeSummary";
-import CSVGenerator from "./CSVGenerator";
+import TimerTypeSummary from "./TimerTypeSummary.jsx";
+import CSVGenerator from "./CSVGenerator.jsx";
 
 function Statistics({ onCloseModal }) {
   const [showDialog, setShowDialog] = useState("");
