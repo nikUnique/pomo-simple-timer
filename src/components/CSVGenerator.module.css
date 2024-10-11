@@ -8,6 +8,8 @@
   border: 1px solid #1098ad;
   border-radius: 11px;
   height: 100%;
+  display: flex;
+  gap: 0.4rem;
 }
 
 .exportBtn:focus-visible {

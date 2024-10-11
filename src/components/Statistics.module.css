@@ -305,11 +305,13 @@
   padding: 0.4rem 0 !important;
   justify-content: center;
   align-items: center;
-  width: 10rem;
+  width: 11rem;
   color: #1098ad;
   border: 1px solid #1098ad !important;
   border-radius: 11px;
   height: 100%;
+  display: flex;
+  gap: 0.4rem;
 }
 
 .sessionBtn:focus-visible {

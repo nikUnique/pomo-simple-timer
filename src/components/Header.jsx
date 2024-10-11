@@ -1,12 +1,11 @@
+import { useRef } from "react";
 import { FaChartBar, FaCog, FaKeyboard } from "react-icons/fa";
+import { useKey } from "../hooks/useKey";
 import styles from "./Header.module.css";
+import KeyboardShortcuts from "./KeyboardShortcuts";
 import Modal from "./Modal";
 import Settings from "./Settings";
 import Statistics from "./Statistics";
-import KeyboardShortcuts from "./KeyboardShortcuts";
-import { useRef } from "react";
-import { useKey } from "../hooks/useKey";
-import { useHotkeys } from "react-hotkeys-hook";
 
 function Header() {
   const openSettingsRef = useRef(null);
@@ -34,7 +33,7 @@ function Header() {
       <div className={styles.headerContent}>
         <div className={styles.appTitle}>
           <img
-            src='/icon.svg'
+            src='./icon.svg'
             alt='Pomodoro icon'
             className={styles.headerIcon}
           />

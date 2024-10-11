@@ -27,6 +27,7 @@ function TimerModeSelection() {
   } = useSettingsData();
 
   const { defineInitialTime } = useTime();
+
   return (
     <div>
       <label className={`${styles.label} ${styles.mb8}`}>
@@ -38,7 +39,7 @@ function TimerModeSelection() {
             type='radio'
             name='timer_options'
             value='pomodoro_timer_mode'
-            defaultChecked={timerMode === "pomodoro_timer_mode"}
+            checked={timerMode === "pomodoro_timer_mode"}
             onChange={(e) => {
               setTimerMode(e.target.value);
               localStorage.setItem(
@@ -76,12 +77,14 @@ function TimerModeSelection() {
           </span>
           Pomodoro timer
         </label>
+
         <label className={styles.radioBox} htmlFor='simple_timer_mode'>
           <input
             type='radio'
             name='timer_options'
             value='simple_timer_mode'
-            defaultChecked={timerMode === "simple_timer_mode"}
+            checked={timerMode === "simple_timer_mode"}
+            // checked={timerMode === "simple_timer_mode"}
             onChange={(e) => {
               setTimerMode(e.target.value);
               localStorage.setItem(
@@ -133,7 +136,8 @@ function TimerModeSelection() {
                   onChange={(e) => {
                     setInputFocus(Number(e.target.value));
                     selectedSession === "focus" && setTime(e.target.value * 60);
-                    setSelectedTime(e.target.value * 60);
+                    selectedSession === "focus" &&
+                      setSelectedTime(e.target.value * 60);
                   }}
                   disabled={isActive}
                 />
@@ -149,7 +153,8 @@ function TimerModeSelection() {
                     setInputShortBreak(Number(e.target.value));
                     selectedSession === "short_break" &&
                       setTime(e.target.value * 60);
-                    setSelectedTime(e.target.value * 60);
+                    selectedSession === "short_break" &&
+                      setSelectedTime(e.target.value * 60);
                   }}
                   disabled={isActive}
                 />
@@ -165,7 +170,8 @@ function TimerModeSelection() {
                     setInputLongBreak(Number(e.target.value));
                     selectedSession === "long_break" &&
                       setTime(e.target.value * 60);
-                    setSelectedTime(e.target.value * 60);
+                    selectedSession === "long_break" &&
+                      setSelectedTime(e.target.value * 60);
                   }}
                   disabled={isActive}
                 />

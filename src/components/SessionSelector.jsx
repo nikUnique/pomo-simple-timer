@@ -1,3 +1,4 @@
+import { FaCoffee, FaHourglassStart, FaUmbrellaBeach } from "react-icons/fa";
 import { useTimer } from "../hooks/useTimer.js";
 import {
   useNotificationData,
@@ -85,6 +86,7 @@ function SessionSelector() {
           onClick={() => handleSessionClick("focus")}
           disabled={(!isPaused && isActive) || (!isActive && !alarmIsStopped)}
         >
+          <FaHourglassStart />
           Focus time
         </button>
         <button
@@ -98,6 +100,7 @@ function SessionSelector() {
             pomodoroCycles === 1
           }
         >
+          <FaCoffee />
           Short break
         </button>
         <button
@@ -107,6 +110,7 @@ function SessionSelector() {
           onClick={(e) => handleSessionClick("long_break")}
           disabled={(!isPaused && isActive) || (!isActive && !alarmIsStopped)}
         >
+          <FaUmbrellaBeach />
           Long break
         </button>
       </div>

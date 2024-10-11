@@ -8,9 +8,9 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { useKey } from "../hooks/useKey.js";
 const alarmSounds = [
-  { name: "Ring One", url: "/end-sound-2.mp3" },
-  { name: "Ring Two", url: "/end-sound-3.mp3" },
-  { name: "Ring Three", url: "/end-sound-4.mp3" },
+  { name: "Ring One", url: "./end-sound-2.mp3" },
+  { name: "Ring Two", url: "./end-sound-3.mp3" },
+  { name: "Ring Three", url: "./end-sound-4.mp3" },
 ];
 
 function Settings({ onCloseModal }) {

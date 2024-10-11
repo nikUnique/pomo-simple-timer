@@ -1,8 +1,14 @@
 import { memo, useEffect, useRef, useState } from "react";
 import {
+  FaChartPie,
+  FaClipboardList,
   FaCoffee,
   FaHammer,
+  FaHistory,
+  FaHourglass,
   FaHourglassHalf,
+  FaHourglassStart,
+  FaListAlt,
   FaStopwatch,
   FaTrashAlt,
   FaUmbrellaBeach,
@@ -90,6 +96,7 @@ function Statistics({ onCloseModal }) {
               onClick={() => handleOpenPage("history")}
               ref={historyBtnRef}
             >
+              <FaHistory />
               History
             </button>
 
@@ -99,6 +106,7 @@ function Statistics({ onCloseModal }) {
               }`}
               onClick={() => handleOpenPage("summary")}
             >
+              <FaListAlt />
               Summary
             </button>
 
@@ -145,7 +153,7 @@ function Statistics({ onCloseModal }) {
                 <TimerTypeSummary
                   pomodoroListReverse={pomodoroListReverse}
                   timerType='Pomodoro'
-                  Icon={FaHammer}
+                  Icon={FaHourglassStart}
                   label='Pomodoro timers'
                 />
                 <TimerTypeSummary
