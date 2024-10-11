@@ -3,7 +3,7 @@ import {
   useNotificationData,
   useSettingsData,
   useTimerData,
-} from "./PomodoroContext.jsx";
+} from "./PomodoroContext";
 import styles from "./SessionSelector.module.css";
 
 function SessionSelector() {

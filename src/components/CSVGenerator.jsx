@@ -1,4 +1,4 @@
-import { useStatsData } from "./PomodoroContext.jsx";
+import { useStatsData } from "./PomodoroContext";
 import styles from "./CSVGenerator.module.css";
 function CSVGenerator() {
   const { pomodoroList } = useStatsData();

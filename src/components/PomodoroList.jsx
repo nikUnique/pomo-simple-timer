@@ -2,7 +2,7 @@ import { memo, useEffect, useMemo, useRef } from "react";
 import { FaArrowUp, FaEye, FaEyeSlash, FaTrash } from "react-icons/fa";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
-import PomodoroSummary from "./PomodoroSummary.jsx";
+import PomodoroSummary from "./PomodoroSummary";
 import styles from "./Statistics.module.css";
 
 function PomodoroList({

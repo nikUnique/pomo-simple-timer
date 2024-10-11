@@ -2,7 +2,7 @@ import { FaPause, FaPlay, FaPlayCircle } from "react-icons/fa";
 import { usePomodoroManager } from "../hooks/usePomodoroManager.js";
 import { useSound } from "../hooks/useSound.js";
 import { useTimer } from "../hooks/useTimer.js";
-import { useModalData, useTimeData, useTimerData } from "./PomodoroContext.jsx";
+import { useModalData, useTimeData, useTimerData } from "./PomodoroContext";
 
 import { memo } from "react";
 import { useKey } from "../hooks/useKey";
