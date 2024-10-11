@@ -3,9 +3,9 @@ import {
   useNotificationData,
   useSettingsData,
   useTimerData,
-} from "./PomodoroContext.jsx";
+} from "./PomodoroContext";
 import styles from "./Settings.module.css";
-import TimeInputForm from "./TimeInputForm.jsx";
+import TimeInputForm from "./TimeInputForm";
 function TimerModeSelection() {
   const { isAlarmPlaying } = useNotificationData();
 

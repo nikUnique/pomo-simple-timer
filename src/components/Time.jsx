@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useTimer } from "../hooks/useTimer.js";
-import { useTimeData, useTimerData } from "./PomodoroContext.jsx";
+import { useTimeData, useTimerData } from "./PomodoroContext";
 import styles from "./Time.module.css";
 function Time() {
   const { time } = useTimeData();

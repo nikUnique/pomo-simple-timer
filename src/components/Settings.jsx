@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { useTimer } from "../hooks/useTimer.js";
-import { useNotificationData, useTimerData } from "./PomodoroContext.jsx";
+import { useNotificationData, useTimerData } from "./PomodoroContext";
 import styles from "./Settings.module.css";
-import TimerModeSelection from "./TimerModeSelection.jsx";
+import TimerModeSelection from "./TimerModeSelection";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { useKey } from "../hooks/useKey.js";

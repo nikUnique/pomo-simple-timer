@@ -1,11 +1,11 @@
-import { PomodoroProvider } from "./PomodoroContext.jsx";
+import { PomodoroProvider } from "./PomodoroContext";
 
 import styles from "./App.module.css";
-import Header from "./Header.jsx";
-import TimerInterface from "./TimerInterface.jsx";
+import Header from "./Header";
+import TimerInterface from "./TimerInterface";
 import { useGetPomodoroData } from "../hooks/useGetPomodoroData.js";
 import { useSetPomodoroCount } from "../hooks/useSetPomodoroCount.js";
-import Statistics from "./Statistics.jsx";
+import Statistics from "./Statistics";
 
 function PomodoroApp() {
   useGetPomodoroData();
