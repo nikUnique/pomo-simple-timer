@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { FaRedo } from "react-icons/fa";
 import { FaForwardStep } from "react-icons/fa6";
-import { useTimer } from "../hooks/useTimer";
+import { useTimer } from "../hooks/useTimer.js";
 import {
   useNotificationData,
   useSettingsData,
   useTimerData,
-} from "./PomodoroContext";
+} from "./PomodoroContext.jsx";
 import styles from "./SessionSelector.module.css";
 function CurrentCycleLabel() {
   const {

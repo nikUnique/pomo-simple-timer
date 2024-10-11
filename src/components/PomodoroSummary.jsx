@@ -6,7 +6,7 @@ import {
   FaPlay,
   FaRedo,
 } from "react-icons/fa";
-import { useTime } from "../hooks/useTime";
+import { useTime } from "../hooks/useTime.js";
 import styles from "./PomodoroSummary.module.css";
 import { memo } from "react";
 
