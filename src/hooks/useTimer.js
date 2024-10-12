@@ -33,7 +33,7 @@ const useTimer = function () {
 
   const { pauseTimeRef, time } = useTimeData();
 
-  const { setTime, currentSessionIndex } = useSettingsData();
+  const { setTime, currentSessionIndex, pomodoroCycles } = useSettingsData();
 
   const soundQueue = useRef([startSoundRef.current]);
 
@@ -97,6 +97,7 @@ const useTimer = function () {
         "currentSessionIndex",
         JSON.stringify(currentSessionIndex)
       );
+    localStorage.setItem("cyclesNumber", JSON.stringify(pomodoroCycles));
   }
 
   function pauseTimer() {
