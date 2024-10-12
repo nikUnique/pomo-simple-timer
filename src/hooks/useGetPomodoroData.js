@@ -9,6 +9,7 @@ import { usePomodoroManager } from "./usePomodoroManager";
 import { useTime } from "./useTime";
 
 function useGetPomodoroData() {
+  // Getting data from relevant contexts
   const {
     setPomodoroCount,
     setPomodoroList,
@@ -36,12 +37,14 @@ function useGetPomodoroData() {
     setSelectedSession,
     setCurrentSessionIndex,
     inputFocus,
+    setPomodoroCycles,
   } = useSettingsData();
 
   const { updatePomodoroEvents } = usePomodoroManager();
 
   const { defineInitialTime } = useTime();
 
+  // One huge effect that works only on mount by getting all the data from local storage and setting it where needed
   useEffect(() => {
     let isSessionFinished;
     const savedPomodoroList = localStorage.getItem("pomodoroList");
@@ -57,6 +60,7 @@ function useGetPomodoroData() {
     }
     const updatedPomodoroList = JSON.parse(savedPomodoroList);
 
+    // Checking whether there was active timer running or not, ot the most elegant way of doing so, could be simpler
     !updatedPomodoroList?.at(-1)?.end &&
       !updatedPomodoroList?.at(-1)?.reset &&
       updatedPomodoroList?.length > 0 &&
@@ -83,10 +87,12 @@ function useGetPomodoroData() {
     if (savedTime) {
       // console.log(isSessionFinished);
       const storageTime = parseInt(savedTime, 10);
+      // This and many other variables will be set from local storage only if the timer was in progress, if it wasn't they won't because it isn't that important to do so if nothing was interrupted
       !isSessionFinished && storageTime > 0 && setTime(storageTime);
       !isSessionFinished &&
         setSelectedTime(updatedPomodoroList?.at(-1)?.selectedTime);
 
+      // This is necessary to keep track of how much time passed since the beginning of the timer untill it was interrupted in case of interrupted timer
       elapsedSecondsRef.current =
         updatedPomodoroList?.at(-1)?.selectedTime - storageTime;
     } else {
@@ -108,7 +114,6 @@ function useGetPomodoroData() {
     }
 
     if (!timerMode) {
-      console.log("does it");
       setTimerMode("pomodoro_timer_mode");
     }
 
@@ -139,12 +144,15 @@ function useGetPomodoroData() {
       localStorage.getItem("currentSessionIndex")
     );
 
+    const cyclesNumber = JSON.parse(localStorage.getItem("cyclesNumber"));
+
     if (
       currentSessionIndex &&
       (timerMode === "pomodoro_timer_mode" || !timerMode) &&
       !isSessionFinished
     ) {
       setCurrentSessionIndex(currentSessionIndex);
+      setPomodoroCycles(cyclesNumber);
     }
 
     const simpleTimerIndex = localStorage.getItem("simpleTimerIndex");
