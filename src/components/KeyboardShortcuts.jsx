@@ -9,13 +9,13 @@ function KeyboardShortcuts({ onCloseModal }) {
 
       <section className={styles.shortcutsSection}>
         <div className={styles.shortcutsPanel}>
-          <ShortcutsItem title='Open settings' keys={["Shift", ","]} />
-          <ShortcutsItem title='Open stats' keys={["Shift", "S"]} />
-          <ShortcutsItem title='Open shortcuts' keys={["Ctrl", "/"]} />
+          <ShortcutsItem title='Open settings' keys={[","]} />
+          <ShortcutsItem title='Open stats' keys={["S"]} />
+          <ShortcutsItem title='Open shortcuts' keys={["/"]} />
         </div>
         <div className={styles.shortcutsPanel}>
           <ShortcutsItem title='Play/Pause' keys={["Spacebar"]} />
-          <ShortcutsItem title='Reset timer' keys={["Shift", "R"]} />
+          <ShortcutsItem title='Reset timer' keys={["R"]} />
         </div>
       </section>
     </div>
