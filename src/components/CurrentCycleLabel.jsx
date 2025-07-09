@@ -128,7 +128,7 @@ function CurrentCycleLabel() {
           </span>
         )}
         <span>
-          {selectedSession === "long_break" && `Series Complete`} &nbsp;
+          {selectedSession === "long_break" && `Series is Complete`} &nbsp;
         </span>
       </div>
       {

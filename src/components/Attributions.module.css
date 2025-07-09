@@ -1,0 +1,40 @@
+.attributionsTitle {
+  color: #1098ad;
+  font-size: 3rem;
+  position: absolute;
+  top: 1.6rem;
+  left: 3.2rem;
+  line-height: 1;
+}
+
+.afterTitleBorder {
+  width: 100%;
+  background-color: #ccc;
+  height: 1px;
+}
+
+.attributionSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #1098ad;
+  padding: 3.2rem;
+  column-gap: 4.8rem;
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+.attribution {
+  margin-bottom: 0.8rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+ol {
+  margin-left: 2em;
+}
+
+ol li {
+  /* list-style-position: outside; */
+  list-style-type: decimal;
+}

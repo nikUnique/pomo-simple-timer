@@ -134,7 +134,7 @@ function TimeInputForm() {
           onClick={handleSetTime}
           className={styles.inputsButton}
           disabled={
-            (isActive && !isPaused) ||
+            isActive /* && !isPaused */ ||
             (inputMinutes === 0 && inputSeconds === 0 && inputHours === 0) ||
             disabledButton
           }

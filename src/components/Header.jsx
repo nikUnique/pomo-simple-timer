@@ -1,16 +1,26 @@
 import { useRef } from "react";
-import { FaChartBar, FaCog, FaKeyboard } from "react-icons/fa";
+import {
+  FaChartBar,
+  FaCog,
+  FaKeyboard,
+  FaInfoCircle,
+  FaCopyright,
+  FaAt,
+  FaUserCircle,
+} from "react-icons/fa";
 import { useKey } from "../hooks/useKey";
 import styles from "./Header.module.css";
 import KeyboardShortcuts from "./KeyboardShortcuts";
 import Modal from "./Modal";
 import Settings from "./Settings";
 import Statistics from "./Statistics";
+import Attributions from "./Attributions";
 
 function Header() {
   const openSettingsRef = useRef(null);
   const openStatsRef = useRef(null);
   const openShortcutsRef = useRef(null);
+  const openAttributionsRef = useRef(null);
 
   function openSettings() {
     openSettingsRef.current?.click();
@@ -24,9 +34,9 @@ function Header() {
 
   // useHotkeys("ctrl+comma", openSettings);
   // useHotkeys("ctrl+shift+comma", openSettings);
-  useKey({ shift: true, key: "comma" }, openSettings);
-  useKey({ shift: true, key: "keys" }, openStats);
-  useKey({ ctrl: true, key: "slash" }, openShortcuts);
+  useKey({ /* shift: true, */ key: "comma" }, openSettings);
+  useKey({ /*  shift: true, */ key: "keys" }, openStats);
+  useKey({ /* ctrl: true, */ key: "slash" }, openShortcuts);
 
   return (
     <header className={styles.appHeader}>
@@ -82,6 +92,20 @@ function Header() {
             </Modal.Open>
             <Modal.Window name='shortcuts'>
               <KeyboardShortcuts />
+            </Modal.Window>
+
+            <Modal.Open opens='attributions'>
+              <button
+                className={styles.toggleStatsButton}
+                ref={openAttributionsRef}
+              >
+                <div className={styles.navItemsContainer}>
+                  <FaUserCircle /> Attributions
+                </div>
+              </button>
+            </Modal.Open>
+            <Modal.Window name='attributions'>
+              <Attributions />
             </Modal.Window>
           </Modal>
         </nav>

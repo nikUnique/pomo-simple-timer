@@ -186,7 +186,6 @@ function TimerModeSelection() {
                 disabled={isActive}
                 onChange={(e) => {
                   setPomodoroCycles(Number(e.target.value));
-                  // localStorage
                   setCurrentSessionIndex(0);
                   setSelectedSession("focus");
                 }}

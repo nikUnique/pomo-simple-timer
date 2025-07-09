@@ -6,6 +6,7 @@ import TimerInterface from "./TimerInterface";
 import { useGetPomodoroData } from "../hooks/useGetPomodoroData.js";
 import { useSetPomodoroCount } from "../hooks/useSetPomodoroCount.js";
 import Statistics from "./Statistics";
+import Notifications from "./Notifications.jsx";
 
 function PomodoroApp() {
   useGetPomodoroData();
@@ -18,6 +19,7 @@ function PomodoroApp() {
       <main className={styles.appMain}>
         <TimerInterface />
       </main>
+      <Notifications />
     </div>
   );
 }

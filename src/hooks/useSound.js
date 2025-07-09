@@ -3,6 +3,7 @@ import CurrentCycleLabel from "../components/CurrentCycleLabel";
 import {
   useNotificationData,
   useSettingsData,
+  useStatsData,
   useTimeData,
   useTimerData,
 } from "../components/PomodoroContext";
@@ -30,8 +31,10 @@ function useSound() {
     shortSoundTimerRef,
     setAlarmIsStopped,
     setIsAlarmPlaying,
+    desktopNotificationRef,
   } = useNotificationData();
   const { setTime } = useSettingsData();
+  const { pomodoroList } = useStatsData();
 
   const { updatePomodoroEndTime } = usePomodoroManager();
 
@@ -42,7 +45,7 @@ function useSound() {
 
   const updateInterval = 100;
 
-  // What to do when the timer was update?
+  // What to do when the timer time was updated?
   // It appears that startTimeRef contains the amount of time that already passed, therefore when I try to adjust the timer, it still has the passed time and just subracts it from the selected time, what to do? I need a way where after adjusting the time the value that gets subracted from now is zero
 
   const handleTimerEnd = useCallback(
@@ -67,6 +70,11 @@ function useSound() {
       currentAudioRef.current.currentTime = 0;
       currentAudioRef.current.volume = isMuted ? 0 : volumeRef.current;
       currentAudioRef.current.play();
+      desktopNotificationRef.current = new Notification(`Time's up!`, {
+        body: `${pomodoroList.at(-1).timerName} is complete`,
+        icon: "./icons8-alert-64.png",
+        requireInteraction: true,
+      });
 
       setTimeout(() => {
         if (timerMode === "pomodoro_timer_mode") {
@@ -77,25 +85,28 @@ function useSound() {
         if (timerMode === "simple_timer_mode") {
           setTime(selectedTime);
         }
+
         stopSound();
       }, 5000);
     },
     [
-      currentAudioRef,
-      isMuted,
-      endSoundRef,
-      activeIntervalTimeRef,
-      selectedTime,
       setIsActive,
-      setAlarmIsStopped,
       setIsTimeUp,
       setTime,
+      setAlarmIsStopped,
+      setIsAlarmPlaying,
+      activeIntervalTimeRef,
+      elapsedSecondsRef,
       shortSoundTimerRef,
       stopSound,
-      timerMode,
+      currentAudioRef,
+      endSoundRef,
+      isMuted,
       volumeRef,
-      setIsAlarmPlaying,
-      elapsedSecondsRef,
+      desktopNotificationRef,
+      pomodoroList,
+      timerMode,
+      selectedTime,
     ]
   );
 
@@ -116,7 +127,8 @@ function useSound() {
       setTime(remainingTime);
 
       if (elapsedSeconds + elapsedSecondsRef.current >= selectedTime) {
-        const finishTime = performance.timeOrigin + performance.now();
+        // const finishTime = performance.timeOrigin + performance.now();
+        const finishTime = Date.now();
 
         let correctedFinishTime =
           Number(String(finishTime).slice(-3)) >= 900 &&

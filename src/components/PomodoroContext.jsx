@@ -1,4 +1,11 @@
-import { createContext, useContext, useMemo, useRef, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const ModalContext = createContext();
 const TimeContext = createContext();
@@ -36,9 +43,20 @@ export const PomodoroProvider = ({ children }) => {
   const [isAlarmPlaying, setIsAlarmPlaying] = useState(false);
   const shortSoundTimerRef = useRef(null);
   const currentAudioRef = useRef(null);
-  const startSoundRef = useRef(new Audio("./start-sound.mp3"));
-  const pauseSoundRef = useRef(new Audio("./pause-sound-2.ogg"));
-  const endSoundRef = useRef(new Audio(alarmSound));
+  const startSoundRef = useRef(null);
+  const pauseSoundRef = useRef(null);
+  const endSoundRef = useRef(null);
+  const desktopNotificationRef = useRef(null);
+
+  useEffect(function () {
+    startSoundRef.current = new Audio("./start-sound.mp3");
+    pauseSoundRef.current = new Audio("./pause-sound-2.ogg");
+    endSoundRef.current = new Audio(alarmSound);
+    startSoundRef.current.preload = "auto";
+    pauseSoundRef.current.preload = "auto";
+    endSoundRef.current.preload = "auto";
+  }, []);
+
   const volumeRef = useRef(0.1);
 
   // Settings context
@@ -132,6 +150,7 @@ export const PomodoroProvider = ({ children }) => {
       volumeRef,
       shortSoundTimerRef,
       currentAudioRef,
+      desktopNotificationRef,
     }),
     [isMuted, allowPauseSound, alarmSound, alarmIsStopped, isAlarmPlaying]
   );
