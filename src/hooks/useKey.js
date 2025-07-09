@@ -40,7 +40,10 @@ export function useKey(keys, action, shouldListen = true) {
           code.toLowerCase() === keys.key.toLowerCase() &&
           !ctrlKey &&
           !shiftKey &&
-          !altKey
+          !altKey /*  &&
+          !keys.ctrl &&
+          !keys.shift &&
+          !keys.alt */
         ) {
           e.preventDefault();
           // console.log(code.toLowerCase(), keys.key.toLowerCase());

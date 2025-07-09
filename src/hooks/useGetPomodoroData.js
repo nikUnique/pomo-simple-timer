@@ -132,11 +132,11 @@ function useGetPomodoroData() {
     const nameOfLastItemOnList = updatedPomodoroList?.at(-1)?.timerName;
 
     if (!nameOfLastItemOnList?.startsWith("Simple") && !isSessionFinished) {
-      nameOfLastItemOnList.toLowerCase().startsWith("focus") &&
+      nameOfLastItemOnList?.toLowerCase().startsWith("focus") &&
         setSelectedSession("focus");
-      nameOfLastItemOnList.toLowerCase().startsWith("short") &&
+      nameOfLastItemOnList?.toLowerCase().startsWith("short") &&
         setSelectedSession("short_break");
-      nameOfLastItemOnList.toLowerCase().startsWith("long") &&
+      nameOfLastItemOnList?.toLowerCase().startsWith("long") &&
         setSelectedSession("long_break");
     }
 

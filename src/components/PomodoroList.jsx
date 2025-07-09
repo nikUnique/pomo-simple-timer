@@ -50,6 +50,48 @@ function PomodoroList({
     return (className = "incomplete");
   }
 
+  // The problem is that the difference is always less then 24 hours, I should also to compare dates
+  function differenceInDays(currentDate, previousDate) {
+    const areDatesDifferent =
+      new Date(currentDate).getDate() !== new Date(previousDate).getDate() &&
+      previousDate;
+    return areDatesDifferent;
+    // const msPerDay = 24 * 60 * 60 * 1000;
+    // const differenceInDays =
+    //   (new Date(currentDate) - new Date(previousDate)) / msPerDay;
+    // console.log(currentDate, previousDate, "superDates");
+    // console.log(differenceInDays);
+
+    // if (Math.floor(differenceInDays) === 1) {
+    //   return 1;
+    // }
+    // if (Math.floor(differenceInDays) < 1) {
+    //   return 0;
+    // }
+    // if (Math.floor(differenceInDays) > 1) {
+    //   return Math.floor(differenceInDays);
+    // }
+
+    // const differenceInYear =
+    //   new Date(currentDate).getFullYear() - new Date(previousDate).getFullYear();
+    // const differenceInMonth =
+    //   new Date(currentDate).getMonth() - new Date(previousDate).getMonth();
+
+    // const differenceInDays =
+    //   new Date(currentDate).getDate() - new Date(previousDate).getDate();
+
+    // Know the difference
+    // Keep track of whether it is the same month or not, the same year or not and I need to add days of the new month, year to the previous month, year
+    // How to understand how much time has gone already?
+    // For this exact case all I need to know that there is a difference and not how much the difference is
+
+    // return dayDifference;
+  }
+
+  // pomodoroListReverse.map((day, i) =>
+  //   console.log(differenceInDays(day.start, pomodoroListReverse[i + 1]?.start))
+  // );
+
   return (
     <>
       <SimpleBar
@@ -130,8 +172,10 @@ function PomodoroList({
                       {session?.showEvents ? <FaEyeSlash /> : <FaEye />}
                     </button>
                   </li>
-                  {new Date(session?.start).getDate() - 1 ===
-                    new Date(arr.at(index + 1)?.start).getDate() && (
+                  {differenceInDays(
+                    session?.start,
+                    arr.at(index + 1)?.start
+                  ) && (
                     <p
                       className={
                         index === arr.length - 1

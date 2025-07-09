@@ -97,6 +97,10 @@ const usePomodoroManager = function () {
       }
     }
 
+    const today = new Date(startTime);
+    const yesterday = today.setDate(today.getDate() + 1);
+    // console.log(startTime);
+    // console.log(yesterday, "yes");
     setPomodoroList((prevList) => {
       const newList = [
         ...prevList,
@@ -110,10 +114,12 @@ const usePomodoroManager = function () {
         },
 
         // {
-        //   start: yesterday.setDate(today.getDate() + 4),
+        //   start: new Date(yesterday),
         //   end: new Date(),
         //   showEvents: false,
         //   events: ["Started at " + new Date().toLocaleTimeString()],
+        //   selectedTime,
+        //   timerName: newTimerName,
         // },
       ];
 
@@ -129,7 +135,7 @@ const usePomodoroManager = function () {
         index === prevList.length - 1
           ? {
               ...item,
-              end: new Date(finishedTime),
+              end: new Date(Date.now()),
               duration:
                 item.selectedTime -
                 JSON.parse(localStorage.getItem("remainingTime")),

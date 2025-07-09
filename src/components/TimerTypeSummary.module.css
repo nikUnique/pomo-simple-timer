@@ -1,7 +1,7 @@
 .summaryItem {
   display: flex;
   flex-direction: column;
-  padding: 1.6rem;
+  padding: 1.2rem;
   border-radius: 9px;
   transition: transform 0.2s ease-in-out;
   background-color: #e7f5f7;

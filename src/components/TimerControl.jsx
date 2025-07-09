@@ -2,7 +2,12 @@ import { FaPause, FaPlay, FaPlayCircle } from "react-icons/fa";
 import { usePomodoroManager } from "../hooks/usePomodoroManager.js";
 import { useSound } from "../hooks/useSound.js";
 import { useTimer } from "../hooks/useTimer.js";
-import { useModalData, useTimeData, useTimerData } from "./PomodoroContext";
+import {
+  useModalData,
+  useNotificationData,
+  useTimeData,
+  useTimerData,
+} from "./PomodoroContext";
 
 import { memo } from "react";
 import { useKey } from "../hooks/useKey";
@@ -12,6 +17,7 @@ function TimerControl() {
   const { pauseTimeRef, correctedStartTimeRef, time } = useTimeData();
   const { isPaused, isActive, startTimeRef, selectedTime } = useTimerData();
   const { openName } = useModalData();
+  const { isAlarmPlaying, desktopNotificationRef } = useNotificationData();
 
   useSound();
 
@@ -23,8 +29,9 @@ function TimerControl() {
 
   const handleStart = () => {
     const now = performance.now();
-    const startTime = performance.timeOrigin + now;
+    // const startTime = performance.timeOrigin + now;
     startTimeRef.current = now;
+    const startTime = Date.now();
 
     correctedStartTimeRef.current =
       Number(String(startTime).slice(-3)) >= 900
@@ -37,6 +44,9 @@ function TimerControl() {
     startTimer();
 
     addPomodoroItem(correctedStartTimeRef.current);
+
+    desktopNotificationRef.current?.close();
+    Notification.requestPermission();
   };
 
   const handlePause = () => {
@@ -54,7 +64,7 @@ function TimerControl() {
     updatePomodoroEvents("Resumed at " + new Date().toLocaleTimeString());
   };
 
-  if (!isActive) timerControl = handleStart;
+  if (!isActive && !isAlarmPlaying) timerControl = handleStart;
   if (isActive && isPaused) timerControl = handleResume;
   if (isActive && !isPaused) timerControl = handlePause;
   if (isActive && isPaused) resetControl = resetTimer;
